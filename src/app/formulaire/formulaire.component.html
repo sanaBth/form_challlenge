@@ -1,0 +1,30 @@
+
+<h2 >Challenge 2</h2>
+<section class="center-element">
+    <form class="example-form" >
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input  matInput  name="nom" [ngClass]="classgreen" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" >
+            <mat-label>Prénom</mat-label>
+            <input matInput  name="prenom" [ngClass]="classgreen" >
+          </mat-form-field>
+          <mat-form-field  class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput  name="email" [ngClass]="classgreen">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput  name="password" [ngClass]="classgreen">
+          </mat-form-field>
+        <div class="example-button-row">
+    
+        
+      <button (click)="changeGreen()" mat-raised-button color="primary">Add</button>
+      <button mat-stroked-button>Reset</button>
+    </div>
+      </form>
+      
+    
+  </section>
