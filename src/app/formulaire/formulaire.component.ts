@@ -26,7 +26,8 @@ const PersonArray : Person[] = [
 })
 export class FormulaireComponent implements OnInit {
   tablePerson = PersonArray;
- // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  classgreen : string= '' ;
+   resetclass : string= '' ;
   insertPerson : Person ={ nom:"", prenom:"", email:"", motdepasse:""};
 
   ngOnInit(): void {
@@ -37,18 +38,11 @@ export class FormulaireComponent implements OnInit {
     email:"",
     password:""
   };
-
- 
-  classgreen : string= '' ;
-   resetclass : string= '' ;
-  taillemotpasse : number = 0;
-   changeGreen() 
+changeGreen() 
    {
        this.classgreen = "bg-green";
     }
-   // tablePerson = PersonArray;
-
-   
+  
 resetBut(): void 
   {
     this.classgreen ="bg-simple";
@@ -67,12 +61,6 @@ resetBut(): void
   };
   delete(index:any) {
 
-    this.taillemotpasse = this.tablePerson[index].motdepasse.length;
-
-    if (this.taillemotpasse > 10)
-    {
-        
-    }
     this.tablePerson.splice(index, 1);
   };
 
