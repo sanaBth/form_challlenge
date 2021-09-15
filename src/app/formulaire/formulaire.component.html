@@ -2,29 +2,43 @@
 <h2 >Challenge 2</h2>
 <section class="center-element">
     <form class="example-form" >
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="example-full-width" appearance="fill" >
           <mat-label>Nom</mat-label>
-          <input  matInput  name="nom" [ngClass]="classgreen" >
+          <input  matInput  name="nom" [ngClass]="classgreen" [(ngModel)]="user.name">
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="fill" >
             <mat-label>Prénom</mat-label>
-            <input matInput  name="prenom" [ngClass]="classgreen" >
+            <input matInput  name="prenom" [ngClass]="classgreen" [(ngModel)]="user.lastname">
           </mat-form-field>
           <mat-form-field  class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput  name="email" [ngClass]="classgreen">
+            <input matInput  name="email" [ngClass]="classgreen" [(ngModel)]="user.email">
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Password</mat-label>
-            <input matInput  name="password" [ngClass]="classgreen">
+            <input matInput  name="password" [ngClass]="classgreen" [(ngModel)]="user.password">
           </mat-form-field>
         <div class="example-button-row">
     
         
-      <button (click)="changeGreen()" mat-raised-button color="primary">Add</button>
-      <button mat-stroked-button>Reset</button>
+      <button (click)="changeGreen()" type="button" mat-raised-button color="primary">Add</button>
+      <button (click)="resetBut()" type="button" mat-stroked-button>Reset</button>
     </div>
       </form>
-      
+      <table width="600">
+        <tr> 
+         
+          <th>Nom</th> <th>Prénom</th> <th>email</th> <th>mot de passe</th><th>Action</th>
+        </tr> 
+        <tr *ngFor = "let person of tablePerson;let i = index">
+         
+          <td>{{ person.nom}}</td> <td> {{ person.prenom}} </td> <td>{{ person.email}}</td> <td >{{ person.motdepasse}}</td>
+          <td>
+            <button [disabled]="person.motdepasse.length  <10" (click)="delete(i)" mat-stroked-button color="warn">Delete</button></td> 
+       
+        </tr>
+       
+      </table>
+     
     
   </section>
